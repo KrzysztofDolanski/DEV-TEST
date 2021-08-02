@@ -25,5 +25,5 @@ java -jar runApp.jar
 ```
 
 ## Author
-Krzystzof Dolański
+Krzysztof Dolański
 2021
