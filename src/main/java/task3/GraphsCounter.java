@@ -26,7 +26,9 @@ public class GraphsCounter {
                 System.err.println("Please, first type number of graphs and than type two integers as an graph. Try again");
                 countGraphs();
             }
-            if (set.contains(s1[0]) || set.contains(s1[1])) {
+            if (set.contains(s1[0]) && set.contains(s1[1])) {
+                result -= 2;
+            } else if (set.contains(s1[0]) || set.contains(s1[1])) {
                 result--;
             }
             set.add(s1[0]);
