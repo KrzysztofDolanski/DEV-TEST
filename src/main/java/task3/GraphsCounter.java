@@ -27,25 +27,31 @@ public class GraphsCounter {
         while (count > 0) {
             String s = sc.nextLine();
             String[] s1 = s.split(" ");
-            if (s1.length < 2) {
+            int first = 0;
+            int second = 0;
+            if (s1.length==2) {
+                first = Integer.parseInt(s1[0]);
+                second = Integer.parseInt(s1[1]);
+            }
+            if (s1.length != 2) {
                 System.err.println("Please, first type number of graphs and than type two integers as an graph. Try again");
                 countGraphs();
             }
 
             while (a > 0) {
-                list.add(Set.of(Integer.valueOf(s1[0]), Integer.valueOf(s1[1])));
+                list.add(Set.of(first, second));
                 a--;
             }
 
             boolean flag = true;
             for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).contains(Integer.parseInt(s1[0])) || list.get(i).contains(Integer.parseInt(s1[1]))) {
+                if (list.get(i).contains(first) || list.get(i).contains(second)) {
                     Set<Integer> set1 = new HashSet<>();
                     for (int j : list.get(i)) {
                         set1.add(j);
                     }
-                    set1.add(Integer.parseInt(s1[0]));
-                    set1.add(Integer.parseInt(s1[1]));
+                    set1.add(first);
+                    set1.add(second);
                     list.set(i, set1);
                     result--;
                     flag = false;
@@ -53,7 +59,7 @@ public class GraphsCounter {
                 }
             }
             if (flag)
-                list.add(Set.of(Integer.parseInt(s1[0]), Integer.parseInt(s1[1])));
+                list.add(Set.of(first, second));
             count--;
         }
 
