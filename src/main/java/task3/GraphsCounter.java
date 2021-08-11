@@ -35,7 +35,7 @@ public class GraphsCounter {
             }
             if (s1.length != 2) {
                 System.err.println("Please, first type number of graphs and than type two integers as an graph. Try again");
-                countGraphs();
+               return countGraphs();
             }
 
             while (a > 0) {
@@ -73,8 +73,6 @@ public class GraphsCounter {
                 }
             }
         }
-
-
         sc.close();
         return result;
     }
